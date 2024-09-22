@@ -98,7 +98,7 @@ void MainWindow::on_viewDocButton_clicked()
     QDialog *docDialog = new QDialog(this);
     docDialog->setWindowTitle("词法分析器使用说明");
 
-    // 文档内容，可以替换为你自己的使用说明
+    // 文档内容，可以替换为自己的使用说明
     QString docText = "声明：版权归:SCNU-CS-2022级-黄泽基(vajackye)所有.\n\n"
                       "词法分析器使用说明:\n\n"
                       "1. 点击 '打开文件' 按钮，选择需要分析的 Rust 源文件。\n"
