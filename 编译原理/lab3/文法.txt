@@ -1,6 +1,6 @@
 program → stmt-sequence  
 
-stmt-sequence → statement { ; statement }  
+stmt-sequence → statement { ; statement }
 
 statement → if-stmt | repeat-stmt | assign-stmt | read-stmt | write-stmt | while-stmt | for-stmt
 
@@ -8,13 +8,17 @@ if-stmt → if (exp) stmt-sequence [ else stmt-sequence ] endif
 
 repeat-stmt → repeat stmt-sequence until exp 
 
-assign-stmt -> identifier exp-reg
+while-stmt -> while (exp) stmt-sequence endwhile
 
-exp-reg -> := exp | ::= regex-stmt
+for-stmt -> for (assign-stmt; exp; factor) stmt-sequence endfor
 
 read-stmt → read identifier  
 
 write-stmt → write exp 
+
+assign-stmt -> identifier exp-reg
+
+exp-reg -> := exp | ::= regex-stmt
 
 exp -> simple-exp [comparison-op simple-exp]
 
@@ -28,17 +32,19 @@ term -> power { mulop power }
 
 mulop -> * | / | %
 
-power -> factor powop power | factor  (右结合)
+power -> factor powop power | factor  (右结合) ---> factor [powop power]
 
 powop -> ^
 
-factor -> (exp) | number | id | ++id | --id
+factor -> (exp) | number | id | autoop id
 
-regex-stmt -> rt { orop andreg }
+autoop -> ++ | --
+
+regex-stmt -> andreg { orop andreg }
 
 orop -> |
 
-andreg -> rp { andop topreg }
+andreg -> topreg { andop topreg }
 
 andop -> &
 
@@ -47,7 +53,3 @@ topreg -> reg-factor { topop }
 topop -> # | ?
 
 reg-factor -> (regex-stmt) | identifier | number
-
-while-stmt -> while (exp) stmt-sequence
-
-for-stmt -> for (assign-stmt; exp; factor) stmt-sequence
