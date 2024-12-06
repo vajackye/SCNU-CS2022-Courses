@@ -1,4 +1,4 @@
-* exe执行程序从：[byyl4](https://wwpw.lanzoub.com/ixsud2hcdreb)下载。exe打开后左上角菜单查看使用说明。
+* exe执行程序从：[https://wwpw.lanzoub.com/ixsud2hcdreb](https://wwpw.lanzoub.com/ixsud2hcdreb)下载。exe打开后左上角菜单查看使用说明。
 * 测试样例：
   ```c++
 	样例1：S -> ( S ) S | @
