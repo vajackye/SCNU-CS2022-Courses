@@ -1,6 +1,6 @@
 /*
 * 应用名：LR1语法分析器
-* 作者：vajackye(22计师黄泽基）
+* 作者：vajackye
 * 版本：1.0
 * 上一次更新日期：2024.12.2
 * 开源地址：https://github.com/vajackye/SCNU-CS2022-Courses/tree/main/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/lab4
