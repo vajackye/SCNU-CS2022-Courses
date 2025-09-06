@@ -1,0 +1,136 @@
+program -> definition-list 
+1 
+definition-list -> definition-list definition 
+1 3 
+definition-list -> definition 
+1 
+definition -> variable-definition 
+1 
+definition -> function-definition 
+1 
+variable-definition -> type-indicator ID ; 
+1 2 0 
+variable-definition -> type-indicator ID [ NUM ] ; 
+1 2 0 2 0 0 
+type-indicator -> int 
+1 
+type-indicator -> float 
+1 
+type-indicator -> real 
+1 
+type-indicator -> void
+1 
+function-definition -> type-indicator ID ( parameters ) compound-stmt 
+2 1 0 2 0 2 
+parameters -> parameter-list 
+1 
+parameters -> void 
+1 
+parameter-list -> parameter-list , parameter 
+1 0 3 
+parameter-list -> parameter 
+1 
+parameter -> type-indicator ID 
+1 2 
+parameter -> type-indicator ID [ ] 
+1 2 0 0 
+compound-stmt -> { local-definitions statement-list } 
+0 1 3 0 
+local-definitions -> local-definitions variable-definition 
+1 3 
+local-definitions -> # 
+1 
+statement-list -> statement-list statement 
+1 3 
+statement-list -> # 
+1 
+statement -> expression-stmt 
+1 
+statement -> compound-stmt 
+1 
+statement -> condition-stmt 
+1 
+statement -> while-stmt 
+1 
+statement -> dowhile-stmt 
+1 
+statement -> return-stmt 
+1 
+expression-stmt -> expression ; 
+1 0 
+expression-stmt -> ; 
+0 
+condition-stmt -> if ( expression ) statement ; 
+1 0 2 0 2 0 
+condition-stmt -> if ( expression ) statement else statement ; 
+1 0 2 0 2 0 2 0 
+while-stmt -> while ( expression ) statement ; 
+1 0 2 0 2 0 
+dowhile-stmt -> do statement while ( expression ) ; 
+1 2 0 0 2 0 0 
+return-stmt -> return ; 
+1 0 
+return-stmt -> return expression ; 
+1 2 0 
+expression -> variable = expression 
+2 1 2 
+expression -> simple-expression 
+1 
+variable -> ID 
+1 
+variable -> ID [ expression ] 
+1 0 2 0 
+simple-expression -> additive-expression relop additive-expression 
+2 1 2 
+simple-expression -> additive-expression 
+1 
+relop -> <= 
+1 
+relop -> < 
+1 
+relop -> >
+1 
+relop -> >= 
+1 
+relop -> == 
+1 
+relop -> != 
+1 
+additive-expression -> additive-expression addop term 
+2 1 2 
+additive-expression -> term 
+1 
+addop -> + 
+1 
+addop -> - 
+1 
+term -> term mulop factor 
+2 1 2 
+term -> factor 
+1 
+mulop -> * 
+1 
+mulop -> / 
+1 
+mulop -> % 
+1 
+mulop -> ^ 
+1 
+factor -> ( expression ) 
+0 1 0 
+factor -> variable 
+1 
+factor -> call 
+1 
+factor -> NUM 
+1 
+call -> ID ( arguments ) 
+1 0 2 0 
+arguments -> argument-list 
+1 
+arguments -> # 
+1 
+argument-list -> argument-list , expression 
+1 0 3 
+argument-list -> expression 
+1 

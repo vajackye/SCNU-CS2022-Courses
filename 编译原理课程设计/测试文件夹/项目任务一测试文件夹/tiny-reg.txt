@@ -1,0 +1,7 @@
+letter = [a-zA-Z]
+digit  = [0-9]
+_number100=digit+
+_identifier200=letter(letter|digit)*
+_keyword300 = if | then | else | end | repeat | read | until | write
+_special400S = \+ | - | \* | / | ^ | < | <> | <= | >= | > | = | ; | :=
+_annotation500={( digit | letter | _special )*}

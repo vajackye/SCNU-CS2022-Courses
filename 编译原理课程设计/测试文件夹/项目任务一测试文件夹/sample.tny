@@ -1,0 +1,33 @@
+read x ;    
+{
+	多行注释
+}
+if x < 10 then
+    y := x * 3 / 2 ;
+    write y
+end
+else
+    repeat
+        x := x + 1 - 2
+    until x = 0
+end ;
+{符号部分}
+if  x <= 99 then
+    x := 1
+end
+else
+    x := 1
+end ;
+
+if  x <> 100 then
+    x := 1
+end ;
+if  x > 99 then
+    x := 1
+end ;
+if  x >= 100 then
+    x := x ^ 2
+end
+else
+    x := 0
+end

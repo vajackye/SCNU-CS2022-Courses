@@ -1,0 +1,18 @@
+letter = [a-zA-Z]
+digit = [0-9]
+_NUM100 = digit+( \. digit+)?
+_ID200 = (_ | letter) ( _ | letter | digit ) *
+_keyword300 = else | if | int | float | real | return | void | while | do
+_left-curlybrace10 = {
+_right-curlybrace20 = }
+_left-squarebracket30 = \[
+_right-squarebracket40 = \]
+_left-roundbracket50 = \(
+_right-roundbracket60 = \)
+_relop600 = <= | < | > | >= | == | !=
+_addop700 = \+ | -
+_mulop800 = \* | / | % | ^
+_assign-op900 = =
+_divide-op1000 = ;
+_comma-op1100 = ,
+_annotation700 = ( letter | digit | _NUM | _ID | _keyword | _left-curlybrace | _right-curlybrace | _left-squarebracket | _left-squarebracket | _left-roundbracket | _right-roundbracket | _relop | _addop | _mulop | _assign-op | _divide-op | _comma-op)
